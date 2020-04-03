@@ -31,6 +31,8 @@ Apify.main(async () => {
                 .replace(/\s/g, ''), 10);
 
 
+            const date = new Date($($('.view-diagrams .well-lg p').get(0)).text().replace('Legutolsó frissítés dátuma: ',''));
+
             const data = {
                 infected,
                 deceased,
@@ -38,6 +40,7 @@ Apify.main(async () => {
                 quarantined,
                 tested,
                 sourceUrl,
+                lastUpdatedAtSource: date.toISOString(),
                 lastUpdatedAtApify: new Date(Date.UTC(now.getFullYear(), now.getMonth(), now.getDate(), now.getHours(), now.getMinutes())).toISOString(),
                 readMe: 'https://apify.com/tugkan/covid-hu',
             };
