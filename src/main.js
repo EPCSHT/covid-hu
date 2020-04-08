@@ -23,8 +23,8 @@ Apify.main(async () => {
                 .replace(/\s/g, ''), 10);
             const recovered = parseInt($($('.view-diagrams .view-content').get(0)).find('.views-row-2 .number').text().trim()
                 .replace(/\s/g, ''), 10);
-            const deceased = parseInt($($('.view-diagrams .view-content').get(0)).find('.views-row-3 .number').text().trim()
-                .replace(/\s/g, ''), 10);
+            // const deceased = parseInt($($('.view-diagrams .view-content').get(0)).find('.views-row-3 .number').text().trim()
+            //     .replace(/\s/g, ''), 10);
             const quarantined = parseInt($($('.view-diagrams .view-content').get(0)).find('.views-row-4 .number').text().trim()
                 .replace(/\s/g, ''), 10);
             const tested = parseInt($($('.view-diagrams .view-content').get(0)).find('.views-row-5 .number').text().trim()
@@ -35,7 +35,7 @@ Apify.main(async () => {
 
             const data = {
                 infected,
-                deceased,
+                // deceased,
                 recovered,
                 quarantined,
                 tested,
